@@ -75,10 +75,14 @@ class ViewController: UIViewController {
             let labelNumber = numberFormatter.number(from: labelText)?.doubleValue
         else { return }
         
-        calculationHistory.append(.number(labelNumber))
-        calculationHistory.append(.operation(buttonOperation))
-        
-        resetLabelText()
+        if label.text == "0" && buttonText == "-" {
+            label.text = "-"
+        } else {
+            calculationHistory.append(.number(labelNumber))
+            calculationHistory.append(.operation(buttonOperation))
+            
+            resetLabelText()
+        }
     }
     
     @IBAction func cleanButtonPressed() {
@@ -132,8 +136,6 @@ class ViewController: UIViewController {
         
         return numberFormatter
     }()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
