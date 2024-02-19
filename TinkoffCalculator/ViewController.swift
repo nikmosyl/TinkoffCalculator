@@ -132,7 +132,7 @@ class ViewController: UIViewController {
         numberFormatter.usesGroupingSeparator = false
         numberFormatter.locale = Locale(identifier: "ru_RU")
         numberFormatter.numberStyle = .decimal
-        numberFormatter.maximumFractionDigits = 30
+        numberFormatter.maximumFractionDigits = 60
         
         return numberFormatter
     }()
