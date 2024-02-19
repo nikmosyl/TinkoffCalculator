@@ -106,6 +106,7 @@ class ViewController: UIViewController {
             if resultWidth > label.bounds.size.width {
                 let formatter = NumberFormatter()
                 formatter.numberStyle = .scientific
+                formatter.maximumFractionDigits = 5
                 label.text = formatter.string(for: result)
             } else {
                 label.text = output
@@ -131,6 +132,8 @@ class ViewController: UIViewController {
         
         return numberFormatter
     }()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
